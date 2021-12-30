@@ -4,6 +4,7 @@ import { AccountStatus } from "./Account-status.enum";
 import { CreateAccountDto } from './dto/create-Account.dto';
 import { Account } from "./Account.entity";
 import { GetAccountsFilterDto } from "./dto/get-Accounts-filter.dto";
+import convertToOneAddress from "src/utilities/convertAddress";
 
 @EntityRepository(Account)
 export class AccountsRepository extends Repository<Account> {
@@ -27,10 +28,12 @@ export class AccountsRepository extends Repository<Account> {
     }
     async createAccount(createAccountDto: CreateAccountDto): Promise<Account> {
         const { account, shortAccount } = createAccountDto;
+        const bechAccount = convertToOneAddress(account);
 
         const Account = this.create({
         account,
         shortAccount,
+        bechAccount,
         status: AccountStatus.VERIFIED,
         });
 
