@@ -54,10 +54,6 @@ export class AccountsService {
     return this.AccountsRepository.createAccount(CreateAccountDto);
   }
 
-  //     this.Accounts.push(Account);
-  //     return Account;
-  //   }
-
   async deleteAccount(id: string): Promise<void> {
     const result = await this.AccountsRepository.delete(id);
 

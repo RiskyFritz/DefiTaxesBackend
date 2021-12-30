@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import {
   Body,
   Controller,
@@ -9,7 +10,6 @@ import {
   Query,
 } from '@nestjs/common';
 import { AccountsService } from './accounts.service';
-import { AccountStatus } from './account-status.enum';
 import { Account } from './account.entity';
 import { CreateAccountDto } from './dto/create-account.dto';
 import { GetAccountsFilterDto } from './dto/get-accounts-filter.dto';
