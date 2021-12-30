@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { AccountStatus } from './Account-status.enum';
 import { CreateAccountDto } from './dto/create-Account.dto';
