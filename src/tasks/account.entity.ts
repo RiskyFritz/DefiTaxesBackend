@@ -14,4 +14,6 @@ export class Account {
   bechAccount: string;
   @Column()
   status: AccountStatus;
+  @Column()
+  user: string;
 }

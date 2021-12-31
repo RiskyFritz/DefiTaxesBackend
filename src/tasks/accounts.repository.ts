@@ -26,6 +26,13 @@ export class AccountsRepository extends Repository<Account> {
         const Accounts = await query.getMany();
         return Accounts;
     }
+    async getAccountsByUser(user: string): Promise<Account[]> {
+        const query = this.createQueryBuilder('Account');
+        query.andWhere('Account.user = :user', { user });
+        const Accounts = await query.getMany();
+        return Accounts;
+    }
+    
     async createAccount(createAccountDto: CreateAccountDto): Promise<Account> {
         const { account, shortAccount } = createAccountDto;
         const bechAccount = convertToOneAddress(account);

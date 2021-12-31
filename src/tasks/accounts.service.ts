@@ -18,30 +18,6 @@ export class AccountsService {
     return this.AccountsRepository.getAccounts(filterDto);
   }
 
-  //   getAllAccounts(): Account[] {
-  //     return this.Accounts;
-  //   }
-
-  //   getAccountsWithFilters(filterDto: GetAccountsFilterDto): Account[] {
-  //     const { status, search } = filterDto;
-  //     let Accounts = this.getAllAccounts();
-
-  //     if (status) {
-  //       Accounts = Accounts.filter((Account) => Account.status === status);
-  //     }
-
-  //     if (search) {
-  //       Accounts = Accounts.filter((Account) => {
-  //         if (Account.title.includes(search) || Account.description.includes(search)) {
-  //           return true;
-  //         }
-  //         return false;
-  //       });
-  //     }
-
-  //     return Accounts;
-  //   }
-
   async getAccountById(id: string): Promise<Account> {
     const found = await this.AccountsRepository.findOne(id);
     if (!found) {
@@ -49,6 +25,10 @@ export class AccountsService {
     }
 
     return found;
+  }
+
+  getAccountsByUser(user: string): Promise<Account[]> {
+    return this.AccountsRepository.getAccountsByUser(user);
   }
 
   createAccount(CreateAccountDto: CreateAccountDto): Promise<Account> {

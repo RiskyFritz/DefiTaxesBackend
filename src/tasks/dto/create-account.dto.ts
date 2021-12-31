@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import { IsNotEmpty } from 'class-validator';
+import { IsNotEmpty, IsOptional } from 'class-validator';
 
 export class CreateAccountDto {
   @IsNotEmpty()
@@ -7,5 +7,8 @@ export class CreateAccountDto {
   
   @IsNotEmpty()
   shortAccount: string;
+
+  @IsOptional()
+  user: string;
 }
 

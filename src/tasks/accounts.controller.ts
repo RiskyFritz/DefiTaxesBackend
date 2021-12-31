@@ -30,6 +30,11 @@ export class AccountsController {
     return this.accountsService.getAccountById(id);
   }
 
+  @Get('/:user')
+  getAccountsByUser(@Param('user') user: string): Promise<Account[]> {
+    return this.accountsService.getAccountsByUser(user);
+  }
+
   @Post()
   createAccount(@Body() CreateAccountDto: CreateAccountDto): Promise<Account> {
     return this.accountsService.createAccount(CreateAccountDto);
