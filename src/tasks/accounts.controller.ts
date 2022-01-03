@@ -54,6 +54,4 @@ export class AccountsController {
     return this.accountsService.updateAccountStatus(id, status);
   }
 }
-function getAccountById() {
-  throw new Error('Function not implemented.');
-}
+

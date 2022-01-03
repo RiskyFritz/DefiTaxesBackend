@@ -9,5 +9,9 @@ export class GetAccountsFilterDto {
 
   @IsOptional()
   @IsString()
+  user?: string;
+
+  @IsOptional()
+  @IsString()
   search?: string;
 }

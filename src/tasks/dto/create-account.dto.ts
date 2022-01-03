@@ -8,7 +8,7 @@ export class CreateAccountDto {
   @IsNotEmpty()
   shortAccount: string;
 
-  @IsOptional()
+  @IsNotEmpty()
   user: string;
 }
 
